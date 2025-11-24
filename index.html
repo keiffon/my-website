@@ -1,10 +1,135 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>My Web Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio — Aspiring Cybersecurity & Web Developer" />
+    <title>Portfolio — Aspiring Cybersecurity & Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to My Web Page</h1>
-    <p>This is a simple HTML document.</p>
+    <!-- Faded avatar in background (SVG) - centered with more realistic eyes -->
+    <svg class="avatar-bg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+            <linearGradient id="skinGrad" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#071216" />
+                <stop offset="1" stop-color="#081522" />
+            </linearGradient>
+            <radialGradient id="irisGrad" cx="50%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#7be7ff" />
+                <stop offset="50%" stop-color="#29b1c7" />
+                <stop offset="100%" stop-color="#0b5060" />
+            </radialGradient>
+            <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.45" />
+            </filter>
+            <filter id="innerGlow">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+        </defs>
+
+        <!-- head background (subtle) -->
+        <g transform="translate(400,350)">
+            <ellipse cx="0" cy="20" rx="260" ry="300" fill="url(#skinGrad)" opacity="0.12" />
+            <!-- eyes centered horizontally -->
+            <g id="eyes" transform="translate(0,30)">
+                <!-- left eye -->
+                <g id="eye-left" transform="translate(-140,0)">
+                    <g class="eye-ball">
+                        <!-- sclera -->
+                        <ellipse class="sclera" rx="56" ry="40" fill="#f7fbff" opacity="0.95" />
+                        <!-- iris -->
+                        <circle class="iris" r="20" fill="url(#irisGrad)" cx="0" cy="0" />
+                        <!-- pupil -->
+                        <circle class="pupil" r="10" cx="0" cy="0" fill="#041014" />
+                        <!-- highlight -->
+                        <circle class="highlight" r="4" cx="-6" cy="-6" fill="#ffffff" opacity="0.95" />
+                    </g>
+                    <!-- subtle eyelid / top shadow -->
+                    <path d="M -56 -6 q 56 -36 112 0" fill="none" stroke="#06131a" stroke-width="6" opacity="0.06" stroke-linecap="round" />
+                </g>
+
+                <!-- right eye -->
+                <g id="eye-right" transform="translate(140,0)">
+                    <g class="eye-ball">
+                        <ellipse class="sclera" rx="56" ry="40" fill="#f7fbff" opacity="0.95" />
+                        <circle class="iris" r="20" fill="url(#irisGrad)" cx="0" cy="0" />
+                        <circle class="pupil" r="10" cx="0" cy="0" fill="#041014" />
+                        <circle class="highlight" r="4" cx="-6" cy="-6" fill="#ffffff" opacity="0.95" />
+                    </g>
+                    <path d="M -56 -6 q 56 -36 112 0" fill="none" stroke="#06131a" stroke-width="6" opacity="0.06" stroke-linecap="round" />
+                </g>
+            </g>
+        </g>
+    </svg>
+
+    <div class="site">
+        <header>
+            <div class="logo">KEIFF</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home" class="hero" aria-label="Home">
+                <div class="intro">
+                    <h1 class="name">Keiff — Aspiring Cybersecurity & Web Developer</h1>
+                    <p class="role">Exploring secure web architectures, modern interfaces, and elegant code.</p>
+                    <p class="subtitle">I build polished front-ends and study defensive security practices. I design clean experiences with a futuristic aesthetic: neon accents, spacious layouts, and subtle motion.</p>
+                    <a class="cta" href="#projects">View Projects</a>
+                </div>
+                <div aria-hidden="true" style="min-height:220px"></div>
+            </section>
+
+            <section id="projects" aria-label="Projects">
+                <h2 style="color:var(--neon); margin:0 0 12px 0">Projects</h2>
+                <div class="projects">
+                    <article class="card">
+                        <h3>Project One</h3>
+                        <p>Responsive dashboard prototype, realtime charts, and accessibility-first components.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Project Two</h3>
+                        <p>Secure authentication demo with audit-friendly logging and role-based flows.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Project Three</h3>
+                        <p>Static site generator + deploy pipeline tuned for privacy and performance.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Project Four</h3>
+                        <p>Small penetration-testing toolkit UI — thoughtful UX for complex workflows.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="about" aria-label="About">
+                <h2 style="color:var(--neon); margin:0 0 12px 0">About</h2>
+                <div class="card">
+                    <p>I’m passionate about web development and cybersecurity — combining creative interfaces with defensive engineering. I enjoy learning modern JS, secure coding practices, and building thoughtful products.</p>
+                </div>
+            </section>
+
+            <section id="contact" aria-label="Contact">
+                <h2 style="color:var(--neon); margin:0 0 12px 0">Contact</h2>
+                <div class="card">
+                    <p>Want to collaborate or chat? Reach out via email: <a href="mailto:keiff@example.com" style="color:var(--neon)">keiff@example.com</a></p>
+                </div>
+            </section>
+
+            <footer>
+                <p>&copy; <span id="year"></span> Keiff — Crafted with a futuristic touch.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

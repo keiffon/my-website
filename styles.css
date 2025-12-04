@@ -16,9 +16,77 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
+  perspective:1200px;
 }
-/* Background avatar (faded) */
-/* avatar removed - previous styles cleared */
+/* 3D Eyes in background */
+.eyes-container{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  gap:120px;
+  z-index:0;
+  opacity:0.08;
+  pointer-events:none;
+  filter:blur(0.8px);
+}
+.eye{
+  width:180px;
+  height:180px;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform 0.15s ease-out;
+}
+.eye-white{
+  width:100%;
+  height:100%;
+  background:radial-gradient(circle at 35% 35%, #f0f4f8, #dce4ec);
+  border-radius:50%;
+  position:relative;
+  box-shadow:inset 0 8px 20px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.3);
+  transform:translateZ(20px);
+}
+.eye-ball{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform 0.12s ease-out;
+}
+.iris{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:radial-gradient(circle at 40% 35%, #4fc3f7, #0288d1, #01579b);
+  position:relative;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4), inset 0 -2px 8px rgba(0,0,0,0.2);
+  transform:translateZ(8px);
+}
+.pupil{
+  position:absolute;
+  width:36px;
+  height:36px;
+  background:#000;
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) translateZ(6px);
+  box-shadow:0 2px 8px rgba(0,0,0,0.6);
+}
+.shine{
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:rgba(255,255,255,0.9);
+  border-radius:50%;
+  top:20%;
+  left:28%;
+  transform:translateZ(10px);
+  filter:blur(1px);
+}
 /* Page container */
 .site{
   position:relative;

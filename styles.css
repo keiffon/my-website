@@ -62,7 +62,7 @@ body{
   border-radius:50%;
   background:radial-gradient(circle at 40% 35%, #4fc3f7, #0288d1, #01579b);
   position:relative;
-  box-shadow:0 4px 12px rgba(0,0,0,0.4), inset 0 -2px 8px rgba(0,0,0,0.2);
+  box-shadow:0 4px 12px rgba(0,0,0,0.4), inset 0 -2px 8px rgba(0,0,0,0.2), 0 0 40px rgba(59,247,255,0.6), 0 0 80px rgba(59,247,255,0.3);
   transform:translateZ(8px);
 }
 .pupil{
